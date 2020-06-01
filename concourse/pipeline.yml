@@ -6,7 +6,7 @@ resources:
         branches: master
     check_every: 1m
   
-  - name: todo-service-image
+  - name: helloworld-service-image
     type: docker-image
     source:
       repository: 192.168.16.1:5005/todo-services
@@ -26,6 +26,6 @@ jobs:
         file: repo/concourse/deploy-image.yml
       - put: todo-service-image
         params:
-          file: target/helloworld-0.0.1-SNAPSHOT.jar.jar
-          name: helloworld-0.0.1-SNAPSHOT.jar.jar
+          file: target/helloworld-0.0.1-SNAPSHOT.jar
+          name: helloworld-0.0.1-SNAPSHOT.jar
           build: repo
